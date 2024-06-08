@@ -1,0 +1,55 @@
+.image-container {
+  position: relative;
+  width: 100%; /* Ensures the container takes full width */
+}
+
+.image-container img {
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.image-container figcaption {
+  font-size: 38px !important; /* Example: Increase font size */
+  position: absolute;
+  top: 50%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Adjusts centering */
+  color: white; /* Example styling */
+  font-size: 24px; /* Example styling */
+  -webkit-font-smoothing: antialiased; /* Smooths text on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smooths text on Firefox */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  /* OR */
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1); /* Adds stroke for contrast */
+  font-family: "Audiowide", sans-serif; /* Uses Roboto font */
+}
+
+.image-container figcaption a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  /* Example breakpoint for tablets and mobiles */
+  .image-container figcaption {
+    font-size: 12px !important;
+    top: 77%;
+    left: 50%;
+  }
+
+  .image-container figcaption a {
+    font-size: 12px;
+  }
+}
+
+.social-icon {
+  display: inline-block; /* Aligns items inline */
+  vertical-align: middle; /* Vertically aligns items in the middle */
+}
+
+.social-icon i {
+  display: inline-block; /* Keeps the icon inline */
+  text-align: center; /* Centers the icon */
+  width: 100%; /* Ensures the icon covers the available space */
+}

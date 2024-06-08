@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{ author }}</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li
+          *ngFor="let mainMenu of menu; let i = index"
+          [ngClass]="mainMenu?.submenu ? 'nav-item dropdown' : 'nav-item'"
+        >
+          <a
+            [ngClass]="
+              mainMenu?.submenu ? 'nav-link dropdown-toggle' : 'nav-link'
+            "
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ mainMenu?.name }}
+          </a>
+          <ul *ngIf="mainMenu?.submenu" class="dropdown-menu">
+            <li *ngFor="let submenu of mainMenu?.submenu; let i = index">
+              <a class="dropdown-item" href="#" [routerLink]="submenu.route">{{
+                submenu.name
+              }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<figure class="image-container">
+  <img src="../assets/AnushaPhotos/AnuFour.jpg" alt="Your Image Description" />
+  <figcaption>
+    Choreographer | Dance Director | Instructor
+    <hr />
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-around">
+          <a
+            href="https://instagram.com/venugopal.anusha"
+            class="me-3 mb-3 mb-md-0"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@venugopal.anusha"
+            class="me-3 mb-3 mb-md-0"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/anusha.venugopal.7771"
+            class="me-3 mb-3 mb-md-0"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a (click)="goTo('GPAY')" class="me-3 mb-3 mb-md-0" target="_blank"
+            ><i class="fa-brands fa-google-pay"></i
+          ></a>
+          <a
+            (click)="goTo('WHATSAPP')"
+            class="me-3 mb-3 mb-md-0"
+            target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a (click)="goTo('TEL')" class="me-3 mb-3 mb-md-0" target="_blank"
+            ><i class="fa-solid fa-phone"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </figcaption>
+</figure>
